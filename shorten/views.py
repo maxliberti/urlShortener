@@ -6,4 +6,7 @@ def home(request):
 
 def redirect(request):
     target_url = 'https://www.google.com/'
-    return render(request, 'index.html', {'target_url': target_url})
+    context = {
+        'target_url' : target_url
+    }
+    return render(request, 'index.html', context)
