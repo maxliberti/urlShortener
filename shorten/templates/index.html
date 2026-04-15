@@ -4,10 +4,16 @@
 <head>
     <title>Redirection Page</title>
 </head>
-<script src="{% static 'script.js' %}"></script>
 <body>
     <h1>You are being redirected...</h1>
     <p>If you are not redirected in a few seconds, <a href="{{ target_url }}">click here</a>.</p>
-    <button onclick="myFunction()">Click me!</button>
+
+    <label>long url: </label>
+    <input type="url" id="input_url" placeholder="www.google.com"><br>
+    <button id="mySubmit" onclick="generateUrl()">submit</button>
+
+    <div id="output_url"></div>
+
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>
