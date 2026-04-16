@@ -1,3 +1,5 @@
+const urls = JSON.parse(document.getElementById('myurls').textContent);
+
 // helper function that generates the particular characters 
 function convertBase62(urlNum) {
   const alphabet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -10,7 +12,9 @@ function convertBase62(urlNum) {
   return result;
 }
 
-function generateUrl(urlNum) {
+function generateUrl() {
+  let urlNum = urls.length;
+
   let inputUrl = document.getElementById("input_url");
   console.log(`you just inputted: ${inputUrl.value}`);
 

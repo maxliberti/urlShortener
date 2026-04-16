@@ -5,8 +5,8 @@
     <title>Redirection Page</title>
 </head>
 <body>
-    <h1>You are being redirected...</h1>
-    <p>If you are not redirected in a few seconds, <a href="{{ target_url }}">click here</a>.</p>
+
+    {{ urls|json_script:"myurls" }}
 
     <label>long url: </label>
     <input type="url" id="input_url" placeholder="www.google.com"><br>
