@@ -2,18 +2,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Redirection Page</title>
+<title>Create a Post </title>
 </head>
+
 <body>
 
     {{ urls|json_script:"myurls" }}
 
-    <label>long url: </label>
-    <input type="url" id="input_url" placeholder="www.google.com"><br>
-    <button id="mySubmit" onclick="generateUrl()">submit</button>
+    <h1>Shorten your URL </h1>
 
-    <div id="output_url"></div>
+    <form id="mainForm" action="" method="POST">
+        {% csrf_token %}
+        Long URL: <input type="url" id="long_url" name="long_url" placeholder="www.google.com"><br>
+        Short URL: <div id="shortened_url" name="shortened_url"></div>
+        <input type="submit" value="Generate"/>
+    </form>
 
     <script src="{% static 'script.js' %}"></script>
+
 </body>
 </html>
